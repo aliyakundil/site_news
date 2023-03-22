@@ -11,6 +11,75 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 from taggit.models import Tag
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.views.generic import ListView,DetailView
+from .models import *
+from django.http import HttpResponseRedirect
+
+
+class TagMixin(object):
+    def get_context_data(self, **kwargs):
+        context = super(TagMixin, self).get_context_data(**kwargs)
+        context['tags'] = Tag.objects.all()
+        return context
+
+
+class PostIndexView(TagMixin, ListView):
+    model = Post
+    template_name = 'main/index.html'
+    queryset = Post.objects.all()
+    context_object_name = 'posts'
+
+
+class TagIndexView(TagMixin, ListView):
+    model = Post
+    template_name = 'main/index.html'
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        return Post.objects.filter(tags__slug=self.kwargs.get('tag_slug'))
+
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
+
+class PostDetailView(DetailView):
+    model = Post
+    context_object_name = 'blog'
+    template_name = 'blog-detail.html'
+
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        context = self.get_context_data(object=self.object)
+
+        # adding like count
+        like_status = False
+        ip = get_client_ip(request)
+        if self.object.likes.filter(id=IpModel.objects.get(ip=ip).id).exists():
+            like_status = True
+        else:
+            like_status = False
+        context['like_status'] = like_status
+
+        return self.render_to_response(context)
+
+
+def postLike(request, pk):
+    post_id = request.POST.get('post-id')
+    post = Post.objects.get(pk=post_id)
+    ip = get_client_ip(request)
+    if not IpModel.objects.filter(ip=ip).exists():
+        IpModel.objects.create(ip=ip)
+    if post.likes.filter(id=IpModel.objects.get(ip=ip).id).exists():
+        post.likes.remove(IpModel.objects.get(ip=ip))
+    else:
+        post.likes.add(IpModel.objects.get(ip=ip))
+    return HttpResponseRedirect(reverse('post_detail', args=[post_id]))
 
 
 def index(request):
@@ -206,45 +275,45 @@ import sys
 print(sys.getrecursionlimit())
 
 
-def tags(request, tag_slug):
-    tag = get_object_or_404(Tag, slug=tag_slug)
-    posts = Post.objects.filter(tags__in=[tag]).order_by('-posted')
-
-    context = {
-        'tag': tag,
-        'posts': posts,
-    }
-
-
-    return render(request, 'tags.html', context)
-
-def detail(request, slug):
-    post = get_object_or_404(Post, slug=slug)
-    return render(request, 'main/detail.html', {'post': post})
-
-
+# def tags(request, tag_slug):
+#     tag = get_object_or_404(Tag, slug=tag_slug)
+#     posts = Post.objects.filter(tags__in=[tag]).order_by('-posted')
+#
+#     context = {
+#         'tag': tag,
+#         'posts': posts,
+#     }
+#
+#
+#     return render(request, 'tags.html', context)
+#
+# def detail(request, slug):
+#     post = get_object_or_404(Post, slug=slug)
+#     return render(request, 'main/detail.html', {'post': post})
 
 
-def post_list(request, tag_slug=None):
-    object_list = Post.published.all()
-    tag = None
 
-    if tag_slug:
-        tag = get_object_or_404(Tag, slug=tag_slug)
-        object_list = object_list.filter(tags__in=[tag])
 
-    paginator = Paginator(object_list, 3) # 3 posts in each page
-    page = request.GET.get('page')
-    try:
-        posts = paginator.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer deliver the first page
-        posts = paginator.page(1)
-    except EmptyPage:
-        # If page is out of range deliver last page of results
-        posts = paginator.page(paginator.num_pages)
-    return render(request, 'main/list.html', {'page': page,
-                                                   'posts': posts,
-                                                   'tag': tag})
+# def post_list(request, tag_slug=None):
+#     object_list = Post.published.all()
+#     tag = None
+#
+#     if tag_slug:
+#         tag = get_object_or_404(Tag, slug=tag_slug)
+#         object_list = object_list.filter(tags__in=[tag])
+#
+#     paginator = Paginator(object_list, 3) # 3 posts in each page
+#     page = request.GET.get('page')
+#     try:
+#         posts = paginator.page(page)
+#     except PageNotAnInteger:
+#         # If page is not an integer deliver the first page
+#         posts = paginator.page(1)
+#     except EmptyPage:
+#         # If page is out of range deliver last page of results
+#         posts = paginator.page(paginator.num_pages)
+#     return render(request, 'main/list.html', {'page': page,
+#                                                    'posts': posts,
+#                                                    'tag': tag})
 
 

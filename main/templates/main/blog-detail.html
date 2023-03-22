@@ -10,23 +10,27 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
-    <div class="container">
-      <h1>The posts are:</h1>
-      {% for tag in tags %}
-        <a href="{% url 'posts_by_tag' tag.slug %}">{{tag.name}}</a>
-      {% endfor %}
-      {% for post in posts %}
-        <div class="col-md-8 mt-4 mb-4">
+    <div class="container text-white">
+      <h1>The post details for {{post.title}} are:</h1>
+        <div class="col-md-8 mt-4 mb-4" style="background-color:#6d6e70;">
           <h3>{{post.title}}</h3>
           <p>{{post.created_at}}</p>
-          <p>  {{post.total_views}}  Views</p>
-          <p>  {{post.total_likes}}  likes</p>
+          <p>{{post.description}}</p>
           {% for tag in post.tags.all %}
             <a href="{% url 'posts_by_tag' tag.slug %}">{{tag.name}}</a>
           {% endfor %}
-          <a href="{% url 'post_detail' pk=post.id %}" class="btn btn-sm btn-primary">Read More</a>
+          <a href="{% url 'post-list' %}" class="btn btn-primary">Go back</a>
+          <form action="{% url 'blog_like' pk=post.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" name="blog-id" value="{{post.id}}" class="btn btn-primary ml-3">
+              {% if like_status %}
+                  Unlike
+              {% else %}
+                  Like
+              {% endif %}
+            </button>
+          </form>
         </div>
-      {% endfor %}
     </div>
 
     <!-- Optional JavaScript -->

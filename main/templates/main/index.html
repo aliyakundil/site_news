@@ -43,34 +43,38 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <h4><a href="/post/{{ news.id }}/">{{news.title}}</a> <span class="text-uppercase margin-l-20">{{news.category_id}}</span></h4>
+                        <h4><a href="/post/{{ news.id }}/" >{{news.title}}</a> <span class="text-uppercase margin-l-20">{{news.category_id}}</span></h4>
                         <p class="card-text">{{news.text}}</p>
                         <p class="card-text" style="color:#000000">{{ news.content|safe|linebreaks|truncatewords:10 }}</p>
                         <p class="card-text">{{ news.created_date }}</p>
                             <span class="text-uppercase margin-l-20">{{ news.author }}</span>
-                        <p class="card-text">{{ news.views }}</p>
+                        <div class="col-md-8 mt-4 mb-4">
+                              <p>  {{news.total_views}}  Views</p>
+                              <p>  {{news.total_likes}}  likes</p>
+<!--                        <p class="card-text">{{ news.views }}</p>-->
+
 
 
                         <!----------TAGS---------->
-                        {% for tag in post.tags.all %}
-                            <a href ="{% url 'tagged' tag.slug %}">{{tag}}</a>
-                        {% endfor %}
-
-                        {%for tag in news.tag.all %}
-                            <a href = '{{tag.get_absolute_url }}'>#{{tag}}</a>
-                        {% endfor %}
-
-                        <p class="tags">
-                            Tags:
-                            {% for tag in news.tags.all %}
-                                <a href="{% url 'post_list_by_tag' tag.slug %}">
-                                    {{ tag.name }}
-                                </a>
-                                {% if not forloop.last %}, {% endif %}
-                            {% endfor %}
-                        </p>
 
 
+                           <div class="container">
+                              {% for tag in tag %}
+                                <a href="{% url 'posts_by_tag' tag.slug %}">{{tag.name}}</a>
+                              {% endfor %}
+                              {% for post in posts %}
+                                <div class="col-md-8 mt-4 mb-4">
+                                  <h3>{{post.title}}</h3>
+                                  <p>{{post.created_at}}</p>
+                                  <p>  {{post.total_views}}  Views</p>
+                                  <p>  {{post.total_likes}}  likes</p>
+                                  {% for tag in post.tags.all %}
+                                    <a href="{% url 'posts_by_tag' tag.slug %}">{{tag.name}}</a>
+                                  {% endfor %}
+                                  <a href="{% url 'post_detail' pk=post.id %}" class="btn btn-sm btn-primary">Read More</a>
+                                </div>
+                              {% endfor %}
+                            </div>
 
                         <!----------END TAGS---------->
 

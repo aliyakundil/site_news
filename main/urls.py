@@ -20,15 +20,20 @@ urlpatterns = [
     # path('<int:pk>/like/', AddLike.as_view(), name='like'),
     path('post/<int:pk>/', post_detail, name='post_detail'),
     path('post_new/', post_new, name='post_new'),
-    path('register/', register, name='register'),
+    path('register/', register,  name='register'),
     path('login/', user_login, name='login'),
     path('logout/', user_logout, name='logout'),
     path('filter/<int:pk>/', filter, name='filter'),
     path('show_category/<int:pk>', show_category, name='show_category'),
 
-    re_path(r'^$', views.post_list, name='post_list'),
-    re_path(r'^tag/(?P<tag_slug>[-\w]*)/$', views.post_list, name='post_list_by_tag'),
-    path('<slug:slug>/',views.detail,name='detail'),
+    # re_path(r'^$', views.post_list, name='post_list'),
+    # re_path(r'^tag/(?P<tag_slug>[-\w]*)/$', views.post_list, name='post_list_by_tag'),
+    # path('<slug:slug>/',views.detail,name='detail'),
+
+    path('', PostIndexView.as_view(), name='post-list'),
+    path('tags/<slug:tag_slug>/', TagIndexView.as_view(), name='posts_by_tag'),
+    path('detail/<int:pk>', PostDetailView.as_view(), name='post_detail'),
+    path('like/<int:pk>', postLike, name='blog_like'),
 
 
     ]
