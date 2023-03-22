@@ -25,13 +25,11 @@ urlpatterns = [
     path('logout/', user_logout, name='logout'),
     path('filter/<int:pk>/', filter, name='filter'),
     path('show_category/<int:pk>', show_category, name='show_category'),
-    path('tag/<slug:tag_slug>/', views.tags, name='tags'),
-    path('<uuid:post_id>', views.detail, name='detail'),
+
     re_path(r'^$', views.post_list, name='post_list'),
     re_path(r'^tag/(?P<tag_slug>[-\w]*)/$', views.post_list, name='post_list_by_tag'),
     path('<slug:slug>/',views.detail,name='detail'),
-    path('like/<int:pk>', LikeView, name='like_post'),
-    re_path(r'^$', views.post_list, name='post_list')
+
 
     ]
 

@@ -1,10 +1,6 @@
 from .forms import PostForm, UserRegisterForm, UserLoginForm
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse
-from django.http import HttpResponseRedirect
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views import View
 from django.contrib import messages
 from django.contrib.auth import login, logout
 from datetime import datetime, timedelta
@@ -14,16 +10,8 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 from taggit.models import Tag
-from django.template.defaultfilters import slugify
-from django.views.generic import ListView,DetailView
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
-
-
-def LikeView(request, pk):
-    post = get_object_or_404(Post, id=request.POST.get('post_id'))
-    post.likes.add(request.user)
-    return HttpResponseRedirect(reverse('index', args=[str(pk)]))
 
 def index(request):
     post = Post.objects.all()
@@ -220,7 +208,7 @@ print(sys.getrecursionlimit())
 
 def tags(request, tag_slug):
     tag = get_object_or_404(Tag, slug=tag_slug)
-    posts = Post.objects.filter(tag=tag).order_by('-posted')
+    posts = Post.objects.filter(tags__in=[tag]).order_by('-posted')
 
     context = {
         'tag': tag,

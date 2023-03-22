@@ -11,6 +11,56 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from django.db.models import Sum
 from django.utils.text import slugify
 
+
+class LikeDislikeManager(models.Manager):
+    use_for_related_fields = True
+
+    def likes(self):
+        # We take the queryset with records greater than 0
+        return self.get_queryset().filter(vote__gt=0)
+
+    def dislikes(self):
+        # We take the queryset with records less than 0
+        return self.get_queryset().filter(vote__lt=0)
+
+    def sum_rating(self):
+        # We take the total rating
+        return self.get_queryset().aggregate(Sum('vote')).get('vote__sum') or 0
+
+
+class LikeDislike(models.Model):
+    LIKE = 1
+    DISLIKE = -1
+
+    VOTES = (
+        (DISLIKE, 'Dislike'),
+        (LIKE, 'Like')
+    )
+
+    vote = models.SmallIntegerField(choices=VOTES)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey()
+
+    objects = LikeDislikeManager()
+
+
+from django.db import models
+from django.contrib.contenttypes.fields import GenericRelation
+
+
+class Article(models.Model):
+    votes = GenericRelation(LikeDislike, related_query_name='articles')
+    def articles(self):
+        return self.get_queryset().filter(content_type__model='article').order_by('-articles__pub_date')
+
+class Comment(models.Model):
+    votes = GenericRelation(LikeDislike, related_query_name='comments')
+    def comments(self):
+        return self.get_queryset().filter(content_type__model='comment').order_by('-comments__pub_date')
+
 class PublishedManager(models.Manager):
     def get_queryset(self):
         return super(PublishedManager, self).get_queryset()\
