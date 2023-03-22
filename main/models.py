@@ -38,9 +38,6 @@ class Post(models.Model):
 
     def total_likes(self):
         return self.likes.count()
-    # objects = models.Manager()  # The default manager
-    # published = PublishedManager()  # Custom manager
-
 
 
     def publish(self):
