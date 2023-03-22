@@ -1,0 +1,9 @@
+{% load news_tags %}
+
+{% get_categories as category %}
+
+
+                        {% for item in category %}
+                        <li><a href="/">{{ item.title }}</a></li>
+                      {% endfor %}
+

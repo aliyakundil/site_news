@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+
+{% block new %}
+    <h2>Новая запись</h2>
+    <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Сохранить</button>
+        <button class="save btn btn-default"><a href="/">Отменить</a></button>
+    </form>
+{% endblock %}

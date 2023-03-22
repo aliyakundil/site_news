@@ -1,0 +1,147 @@
+html {
+  background-color:#214c84;
+  background-blend-mode:overlay;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-image:url(../../assets/img/image4.jpg);
+  background-repeat:no-repeat;
+  background-size:cover;
+  height:100%;
+}
+
+body {
+  background-color:transparent;
+}
+
+.registration-cssave{
+  padding:50px 0;
+}
+
+.registration-cssave form {
+  max-width:800px;
+  padding:50px 70px;
+  border-radius:10px;
+  box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
+  background-color:#fff;
+}
+
+.registration-cssave form h3 {
+  font-weight:bold;
+  margin-bottom:30px;
+}
+
+.registration-cssave .item {
+  border-radius:10px;
+  margin-bottom:25px;
+  padding:10px 20px;
+}
+
+.registration-cssave .create-account {
+  border-radius:30px;
+  padding:10px 20px;
+  font-size:18px;
+  font-weight:bold;
+  background-color:#3f93ff;
+  border:none;
+  color:white;
+  margin-top:20px;
+}
+
+@media (max-width: 576px) {
+  .registration-cssave form {
+    padding:50px 20px;
+  }
+}
+
+/* The sidebar menu */
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+div.wrapper {
+width:450px;
+}
+div.left_block {
+float:left;
+width:200px;
+}
+div.right_block {
+float:right;
+width:200px;
+}
+
+.navbar {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#navbar li { display: inline; }
+
+.info-block {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    flex: 10%;
+    background-color: #cabcbc;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+
+    font-size: 0px;
+}
+
+.social_links {
+    width: auto;
+    background-color:white;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display:flex;
+    align-items: center;
+}
+
+.btn {
+    height: 50px;
+    width: 50px;
+    margin-left:auto;
+    margin-right: auto;
+    border-radius: 50%;
+    background-color: dodgerblue;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}

@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% include "paginator.html" with page=posts %}
+
+
+  {% if tag %}
+      <h2>Posts tagged with {{ tag.name }}</h2>
+  {% endif %}
+
+
+
+{% endblock %}

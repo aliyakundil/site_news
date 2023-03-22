@@ -1,0 +1,7 @@
+{% extends 'main/base.html' %}
+
+
+{% for post in last_post %}
+{{post.title}}
+{{post.get_absolute_url }}
+{% endfor %}

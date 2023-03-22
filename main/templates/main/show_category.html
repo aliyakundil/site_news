@@ -1,0 +1,50 @@
+{% extends 'main/base.html' %}
+{% load news_tags %}
+
+      {% block content %}
+
+
+
+
+        <div id="work">
+            <div class="container content-lg">
+                <div class="row margin-b-40">
+                    <div class="col-sm-6">
+                        <h2>Новости</h2>
+                        </div>
+                </div>
+                <!--// end row -->
+
+
+                {% for news in post %}
+                <div class="row-3">
+                    <!-- Latest Products -->
+                    <div class="col-sm-4 sm-margin-b-50">
+                        <div class="margin-b-20">
+                            <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                                {% if news.image %}
+                                <img class="img-responsive" src="{{ news.image.url }}" alt="Latest Products Image">
+                                    {% else %}
+                                <img src="#" alt="" width="400">
+                                {% endif %}
+                            </div>
+                        </div>
+                        <h4><a href="/post/{{ news.id }}/">{{news.title}}</a> <span class="text-uppercase margin-l-20">{{news.category_id}}</span></h4>
+                        <p class="card-text">{{news.text}}</p>
+                        <p class="card-text" style="color:#000000">{{ news.content|safe|linebreaks|truncatewords:10 }}</p>
+                        <p class="card-text">{{ news.created_date }}</p>
+                            <span class="text-uppercase margin-l-20">{{ news.author }}</span>
+                        <p class="card-text">{{ news.views }}</p>
+                            {% if user.is_authenticated %}
+                        <a class="link" href="/post_edit/{{ news.id }}/edit">Редактировать</a>
+                        <a class="link" href="/post_delete/{{ news.id }}/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Удалить</a>
+                        {% endif %}
+                    </div>
+                    <!-- End Latest Products -->
+
+
+            </div>
+            {% endfor %}
+                        </div>
+        </div>
+{% endblock %}

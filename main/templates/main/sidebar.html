@@ -1,0 +1,75 @@
+{% load news_tags %}
+
+<div class="block1">
+    <div class="social_links">
+        {% get_categories as categories %}
+        <div class="container">
+           <div class="container content-lg">
+               <div class="widget">
+                        <h3 class="widget-title">Фильтрация</h3>
+                            <ul class="widget-list">
+                                <li><a href="{% url 'filter' pk=1 %}">Неделя</a></li>
+                                <li><a href="{% url 'filter' pk=2 %}">Месяц</a></li>
+                                <li><a href="{% url 'filter' pk=3 %}">Все</a></li>
+                                {% for item in categories %}
+                                <li><a href="{% url 'show_category' item.pk %}">{{ item.title }}</a></li>
+                              {% endfor %}
+                            </ul>
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+
+<div class="block1">
+    <div class="container">
+        <div class="container content-lg">
+            <div class="widget">
+                <div class="social_links">
+                {% get_categories2 as last_post %}
+                    <h3 class="widget-title">Новинки</h3>
+                    {% for news in last_post %}
+                        <div class="collapse navbar-collapse nav-collapse">
+                            <div class="menu-container">
+                                <ul class="nav navbar-nav navbar-nav-right">
+
+                                    {% if news.image %}
+
+                                        <img class="img-responsive" src="{{ news.image.url }}" alt="Latest Products Image" width="100" height="20">
+                                            {% else %}
+                                        <img src="#" alt="" width="100">
+                                        {% endif %}
+
+                                    <h8><a class="widget-title" href="/post/{{ news.id }}/">{{news.title}}</a> </h8>
+                                    <p class="widget-title" style="color:#000000">{{ news.content|safe|linebreaks|truncatewords:10 }}</p>
+                                    <p class="widget-title">{{ news.created_date }}</p>
+                                        <span class="text-uppercase margin-l-20">{{ news.author }}</span>
+                                        </ul>
+                                </div>
+                                    {% endfor %}
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .block1 {
+float: left;
+display: block;
+width: 300px;
+border: 1px ;
+margin: 3px;
+}
+
+.block2 {
+float: left;
+display: block;
+width: 300px;
+border: 1px ;
+margin: 3px;
+}
+</style>
