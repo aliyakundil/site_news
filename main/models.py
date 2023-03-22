@@ -3,6 +3,7 @@ from django.conf import settings
 from django.urls import reverse
 from django.utils import timezone
 from taggit.managers import TaggableManager
+from django.contrib.auth.models import User
 
 
 class IpModel(models.Model):
@@ -17,7 +18,7 @@ class Post(models.Model):
         verbose_name_plural = 'Новости'
         ordering = ['-created_date']
 
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='Автор')
+    # author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='Автор')
     title = models.CharField(max_length=222, verbose_name='Заголовок')
     text = models.TextField(blank=True, verbose_name='Текст')
     created_date = models.DateTimeField(default=timezone.now, verbose_name='Дата создания')
@@ -27,6 +28,7 @@ class Post(models.Model):
     id_published = models.BooleanField(default=True, verbose_name='Опубликовано')
     category_id = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name='Категория')
     tags = TaggableManager()
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     views = models.ManyToManyField(IpModel, related_name="post_views", blank=True)
     likes = models.ManyToManyField(IpModel, related_name="post_likes", blank=True)
 

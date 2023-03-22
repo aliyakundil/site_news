@@ -47,7 +47,7 @@
                         <p class="card-text">{{news.text}}</p>
                         <p class="card-text" style="color:#000000">{{ news.content|safe|linebreaks|truncatewords:10 }}</p>
                         <p class="card-text">{{ news.created_date }}</p>
-                            <span class="text-uppercase margin-l-20">{{ news.author }}</span>
+                            <span class="text-uppercase margin-l-20">{{ news.user }}</span>
                         <div class="col-md-8 mt-4 mb-4">
                               <p>  {{news.total_views}}  Views</p>
                               <p>  {{news.total_likes}}  likes</p>
@@ -57,7 +57,18 @@
 
                         <!----------TAGS---------->
 
-
+                            <p class="tags">
+                            Tags:
+                            {% for tag in news.tags.all %}
+                                <a href="{% url 'post_list_by_tag' tag.slug %}">
+                                    {{ tag.name }}
+                                </a>
+                                {% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        </p>
+                        {% for tag in tags %}
+                                <a href="{% url 'posts_by_tag' tag.slug %}">{{tag.name}}</a>
+                              {% endfor %}
                            <div class="container">
                               {% for tag in tag %}
                                 <a href="{% url 'posts_by_tag' tag.slug %}">{{tag.name}}</a>

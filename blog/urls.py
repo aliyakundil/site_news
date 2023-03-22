@@ -29,10 +29,7 @@ urlpatterns = [
     path('api/v1/', include('main.urls')),
     path('api/v1/base-auth/', include('rest_framework.urls')),
     path('api/v1/auth/', include('djoser.urls')),  # new
-    path('__debug__/', include('debug_toolbar.urls')),
-    # path('', index, name="index"),
-    # path('post/<slug:slug>/', detail, name="detail"),
-    # path('tag/<slug:slug>/', tagged, name="tagged"),
+    path('__debug__/', include('debug_toolbar.urls')),\
 ]
 
 urlpatterns += urlpatterns_yasg

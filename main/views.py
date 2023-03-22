@@ -153,34 +153,6 @@ def filter(request, pk):
 
 
 
-# def likes(self, request, pk, *args, **kwargs):
-#     post = Likes.objects.get(pk=pk)
-#
-#     is_dislike = False
-#
-#     for dislike in post.dislikes.all():
-#         if dislike == request.user:
-#             is_dislike = True
-#             break
-#
-#     if is_dislike:
-#         post.dislikes.remove(request.user)
-#
-#     is_like = False
-#
-#     for like in post.likes.all():
-#         if like == request.user:
-#             is_like = True
-#             break
-#
-#     if not is_like:
-#         post.likes.add(request.user)
-#
-#     if is_like:
-#         post.likes.remove(request.user)
-#
-#     return render(reverse('likes', args=[str(pk)]))
-
 def user_login(request):
     if request.method == 'POST':
         form = UserLoginForm(data=request.POST)
@@ -219,26 +191,6 @@ def show_category(request, pk):
         'all_category' : all_category,
         'post':post
     })
-
-# #  Поиск
-# Post.objects.annotate(
-#     search = SearchVector('title', 'text')
-# ).filter(seacrh='django')
-
-# #  Поиск
-# def post_seacrh(request):
-#     form = SearchForm()
-#     if 'query' in request.GET:
-#         if form.is_valid():
-#             cd = form.cleaned_data
-#             results = SeacrhQuerySet().models(Post).filter(content=cd['query']).load_all()
-#             total_result = results.count()
-#     return render(request, 'main/search.html',
-#                   { 'form': form,
-#                     'cd': cd,
-#                     'results':results,
-#                     'total_result': total_result})
-
 
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -287,33 +239,33 @@ print(sys.getrecursionlimit())
 #
 #     return render(request, 'tags.html', context)
 #
-# def detail(request, slug):
-#     post = get_object_or_404(Post, slug=slug)
-#     return render(request, 'main/detail.html', {'post': post})
+def detail(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    return render(request, 'main/detail.html', {'post': post})
 
 
 
 
-# def post_list(request, tag_slug=None):
-#     object_list = Post.published.all()
-#     tag = None
-#
-#     if tag_slug:
-#         tag = get_object_or_404(Tag, slug=tag_slug)
-#         object_list = object_list.filter(tags__in=[tag])
-#
-#     paginator = Paginator(object_list, 3) # 3 posts in each page
-#     page = request.GET.get('page')
-#     try:
-#         posts = paginator.page(page)
-#     except PageNotAnInteger:
-#         # If page is not an integer deliver the first page
-#         posts = paginator.page(1)
-#     except EmptyPage:
-#         # If page is out of range deliver last page of results
-#         posts = paginator.page(paginator.num_pages)
-#     return render(request, 'main/list.html', {'page': page,
-#                                                    'posts': posts,
-#                                                    'tag': tag})
+def post_list(request, tag_slug=None):
+    object_list = Post.published.all()
+    tag = None
+
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        object_list = object_list.filter(tags__in=[tag])
+
+    paginator = Paginator(object_list, 3) # 3 posts in each page
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer deliver the first page
+        posts = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range deliver last page of results
+        posts = paginator.page(paginator.num_pages)
+    return render(request, 'main/list.html', {'page': page,
+                                                   'posts': posts,
+                                                   'tag': tag})
 
 

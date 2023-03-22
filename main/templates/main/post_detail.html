@@ -7,9 +7,10 @@
                 {{ post.published_date }}
             </div>
         {% endif %}
+
         <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
-                                {% if news.image %}
-                                <img class="img-responsive" src="{{ news.image.url }}" alt="Latest Products Image" width="500" >
+                                {% if post.image %}
+                                <img class="img-responsive" src="{{ post.image.url }}" alt="Latest Products Image" width="500" >
                                 {% endif %}
                             </div>
         {% if user.is_authenticated %}

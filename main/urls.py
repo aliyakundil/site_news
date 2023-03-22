@@ -26,8 +26,8 @@ urlpatterns = [
     path('filter/<int:pk>/', filter, name='filter'),
     path('show_category/<int:pk>', show_category, name='show_category'),
 
-    # re_path(r'^$', views.post_list, name='post_list'),
-    # re_path(r'^tag/(?P<tag_slug>[-\w]*)/$', views.post_list, name='post_list_by_tag'),
+    re_path(r'^$', views.post_list, name='post_list'),
+    re_path(r'^tag/(?P<tag_slug>[-\w]*)/$', views.post_list, name='post_list_by_tag'),
     # path('<slug:slug>/',views.detail,name='detail'),
 
     path('', PostIndexView.as_view(), name='post-list'),
