@@ -5,16 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f289e51c-1ad0-444d-a9c9-a06f10d3087f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main/templates/main/blog-detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/css/css.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/css/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/css/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/css/menu_bar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/css/sky.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/graph/bmp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/graph/bmp_hun.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/graph/bmp_temp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/graph/dht.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/graph/dht_hun.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/graph/dht_temp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/images/02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/images/cloud_one.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/images/cloud_three.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/images/cloud_two.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/images/like.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/images/moon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/images/sky.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/images/облака.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/1920x1080/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/1920x1080/02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/1920x1080/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/1920x1080/weather-station.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/500x700/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/500x700/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/500x700/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/500x700/weather-station.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/970x647/03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/970x647/04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/970x647/05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/970x647/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/970x647/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/970x647/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/970x647/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/sensors/BMP.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/sensors/dht11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/sensors/dht_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/sensors/water.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/weather/moon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/weather/sun.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/main/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/main/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,11 +77,12 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Projects/site_news/main/templates"
+    "last_opened_file_path": "D:/Projects/site_news/main/static/css"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\site_news\main\static\css" />
       <recent name="D:\Projects\site_news\main\templates" />
       <recent name="D:\Projects\site_news\main\templates\main" />
     </key>
