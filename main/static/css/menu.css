@@ -1,6 +1,7 @@
 .dws-menu *{
     margin: 0 auto;
     padding: 0;
+    color: black;
 }
 
 
@@ -95,7 +96,7 @@
 .dws-menu li > ul li a{
     padding: 10px;
     text-transform: none;
-    background: #e4e4e5;
+    background: #0c0c0d;
 }
 
 .dws-menu li > ul li ul{
