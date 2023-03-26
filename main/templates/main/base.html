@@ -64,7 +64,7 @@
                         <div class="menu-container">
                             <ul class="nav navbar-nav navbar-nav-right">
                                 <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="/">Главная</a></li>
-                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#">Блоги</a></li>
+                                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="{% url 'all_news' %}">Новости</a></li>
                                 {% if user.is_authenticated %}
                                 <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="{% url 'post_new' %}">Добавить</a></li>
                                 {% endif %}

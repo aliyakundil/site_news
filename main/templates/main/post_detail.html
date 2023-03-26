@@ -83,61 +83,57 @@ i{
                             <div class="menu-container">
                                 <ul class="nav navbar-nav navbar-nav-right">
                                     <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="/">Главная</a></li>
-                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#">Новости</a></li>
+                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="{% url 'all_news' %}">Новости</a></li>
 
                                 </ul>
                             </div>
                 </div>
-                          </nav>
+            </nav>
             <!-- Navbar -->
         </header>
 
 
-<div class="container content-lg">
-      <div class="container">
-            <div class="post">
-            {% if post.published_date %}
-                <div class="date">
-                    {{ post.published_date }}
+<div class="container" style="max-width:700px">
+
+            <div class="post" >
+                {% if post.published_date %}
+                    <div class="date">
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p>{{ post.published_date }}</p>
+                        <p>{{ post.published_date }}</p>
+                    </div>
+                {% endif %}
+                <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                    <!-- Preview Image -->
+                    {% if post.image %}
+                    <img class="img-responsive" src="{{ post.image.url }}" alt="Latest Products Image" width="500" >
+                    {% endif %}
+
                 </div>
-            {% endif %}
-            <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
-                <!-- Preview Image -->
-                                    {% if post.image %}
-                                    <img class="img-responsive" src="{{ post.image.url }}" alt="Latest Products Image" width="500" >
-                                    {% endif %}
-
-                                </div>
-            {% if user.is_authenticated %}
-                 <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-            {% endif %}
-            <h1>{{ post.title }}</h1>
-            <p>{{ post.text|linebreaksbr }}</p>
-        </div>
-
-
-      {% block likes %}
+                {% if user.is_authenticated %}
+                     <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+                {% endif %}
+                <h1>{{ post.title }}</h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
             <div class="like-container">
               <p class="num-of-likes" id ="num">{{post.likes.count}}</p>
+                {% if msg %}
 
-            {% if msg %}
+                <i class="fa-solid fa-heart"></i>
 
-            <i class="fa-solid fa-heart"></i>
+                {% else %}
 
-            {% else %}
+                <i class="fa-regular fa-heart"></i>
 
-            <i class="fa-regular fa-heart"></i>
-
-            {% endif %}
-
-
-
-
+                {% endif %}
 
               <small>like</small>
           </div>
-
-            {% endblock %}
+      </div>
+</div>
 
     <script>
 

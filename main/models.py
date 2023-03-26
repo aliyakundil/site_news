@@ -19,6 +19,7 @@ class Post(models.Model):
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
+        ordering = ['-published_date']
 
     title = models.CharField(max_length=222, verbose_name='Заголовок')
     text = models.TextField(blank=True, verbose_name='Текст')

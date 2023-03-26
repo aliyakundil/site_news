@@ -14,10 +14,14 @@ from django.views.generic import ListView, DetailView
 from .models import *
 import json
 from django.core.paginator import Paginator
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
 from django.http import JsonResponse
-from django.http import HttpResponse
+
+class IndexView(ListView):
+
+    model = Post
+    template_name = "main/scroll.html"
+    context_object_name = 'all_news'
+    paginate_by = 2
 
 
 def blog_index(request):
@@ -72,39 +76,7 @@ def index(request):
     category2 = Category.objects.all
     common_tags = Post.tags.most_common()[:4]
 
-    # paginator = Paginator(post_list, 3)
-    #
-    # # page_number is initialized to `1` see main.js
-    # page_number = request.GET.get('page')
-    #
-    # # we are applying page number which defaults to `1`
-    # page_obj = paginator.get_page(page_number)
-    #
-    # if page_number:
-    #
-    #     if int(page_number) <= paginator.num_pages:
-    #         obj_list = paginator.get_page(page_number)
-    #
-    #         obj_list = obj_list.object_list.values()
-    #
-    #         return JsonResponse(list(obj_list), status=200, safe=False)
     return render(request, 'main/index.html', {'post':post, 'category2':category2, 'common_tags':common_tags})
-
-# def like(request, pk):
-#     post = Post.objects.get(pk=pk)
-#     ip = get_client_ip(request)
-#     if request.user.is_authenticated:
-#         user = request.user
-#
-#         if post.likes.filter(id=user.id).exists():
-#             msg = True
-#
-#     if IpLikes.objects.filter(ip=ip).exists():
-#         post.views.add(IpModel.objects.get(ip=ip))
-#     else:
-#         IpModel.objects.create(ip=ip)
-#         post.views.add(IpModel.objects.get(ip=ip))
-#     return render(request, 'main/index.html', {'post': post, 'msg': msg})
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -113,32 +85,6 @@ def get_client_ip(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     return ip
-
-# def postLike(request, pk):
-#     post_id = request.POST.get('blog-id')
-#     post = Post.objects.get(pk=post_id)
-#     ip = get_client_ip(request)
-#     if not IpLikes.objects.filter(ip=ip).exists():
-#         IpLikes.objects.create(ip=ip)
-#     if post.likes.filter(id=IpLikes.objects.get(ip=ip).id).exists():
-#         post.likes.remove(IpLikes.objects.get(ip=ip))
-#     else:
-#         post.likes.add(IpLikes.objects.get(ip=ip))
-#     return HttpResponseRedirect(reverse('/', args=[post_id]))
-
-def all_news(request):
-    post = Post.objects.all()
-    category2 = Category.objects.all
-    return render(request, 'main/all_news.html', {'post':post, 'category2':category2})
-
-def get_client_ip(request):
-    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-    if x_forwarded_for:
-        ip = x_forwarded_for.split(',')[0]
-    else:
-        ip = request.META.get('REMOTE_ADDR') # В REMOTE_ADDR значение айпи пользователя
-    return ip
-
 
 
 def post_detail(request, pk):
@@ -274,15 +220,6 @@ class CategoryViewSet(viewsets.ModelViewSet):
     serializer_class = CategorySerializer
 
 
-# def post_detail_view(request, pk):
-#     handle_page = get_object_or_404(Post, id=pk)
-#
-#     context = {}
-#
-#     context['post'] = handle_page
-#     return render(request, 'main/post_detail.html', context)
-
-
 def detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
     msg = False
@@ -339,16 +276,6 @@ class TagIndexView(TagMixin, ListView):
 
     def get_queryset(self):
         return Post.objects.filter(tags__slug=self.kwargs.get('tag_slug'))
-
-
-# def get_client_ip(request):
-#     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-#     if x_forwarded_for:
-#         ip = x_forwarded_for.split(',')[0]
-#     else:
-#         ip = request.META.get('REMOTE_ADDR')
-#     return ip
-
 
 class PostDetailView(DetailView):
     model = Post
