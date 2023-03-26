@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Like Dislike Buttons</title>
+    <style>*{font-family: Arial, Helvetica, sans-serif;box-sizing:border-box;}</style>
+
+    <!-- (A) LOAD CSS + JS -->
+    <link rel="stylesheet" href="lidi.css">
+    <script src="lidi.js"></script>
+  </head>
+  <body>
+    <!-- (B) CREATE LIKE/DISLIKE BUTTON HERE -->
+    <div id="demoB"></div>
+
+    <!-- (C) JAVASCRIPT -->
+    <script>
+    var demo = lidi({
+      // (C1) TARGET HTML + INITIAL STATUS + COUNT
+      hWrap : document.getElementById("demoB"),
+      status : -1,
+      count : [123, 45],
+
+      // (C2) UPDATE SERVER ON LIKE/DISLIKE CHANGE
+      // server should respond with updated like/dislike count
+      // e.g. [123, 456]
+      change : status => {
+        var data = new FormData();
+        data.append("status", status);
+        fetch("2-dummy.txt", { method: "POST", body: data })
+        .then(res => res.json())
+        .then(count => demo.recount(count))
+        .catch(err => console.error(err));
+      }
+    });
+
+    // (C3) OR MANUALLY CALL RECOUNT()
+    // demo.recount([999, 888]);
+
+    // (C4) TO ENABLE/DISABLE THE LIKE/DISLIKE BUTTON
+    // demo.enable();
+    // demo.disable();
+    </script>
+  </body>
+</html>

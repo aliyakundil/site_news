@@ -43,8 +43,19 @@ INSTALLED_APPS = [
     'rest_framework',
     'djoser',
     'main',
+    # 'users',
     'taggit',
 ]
+
+# AUTH_USER_MODEL = 'users.User'
+# AUTH_USER_MODEL = 'main.User'
+#
+# USERS_VERIFY_EMAIL = True
+#
+# USERS_AUTO_LOGIN_ON_ACTIVATION = True
+#
+# USERS_EMAIL_CONFIRMATION_TIMEOUT_DAYS = 3
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -83,7 +94,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blog',
+        'NAME': 'news',
         'USER': 'bloguser',
         'PASSWORD': '12345',
         'HOST': 'localhost',

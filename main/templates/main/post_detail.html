@@ -1,22 +1,219 @@
-{% extends 'main/base.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
 
-{% block new %}
-    <div class="post">
-        {% if post.published_date %}
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-        {% endif %}
+<head>
 
-        <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
-                                {% if post.image %}
-                                <img class="img-responsive" src="{{ post.image.url }}" alt="Latest Products Image" width="500" >
-                                {% endif %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>New</title>
+
+          <!-- Maps -->
+        <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+        <!-- Maps -->
+
+        <!-- GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="{% static 'vendor/simple-line-icons/css/simple-line-icons.css'%}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css"/>
+
+        <!-- PAGE LEVEL PLUGIN STYLES -->
+        <link href="{% static 'css/animate.css'%}" rel="stylesheet">
+        <link href="{% static 'vendor/swiper/css/swiper.min.css'%}" rel="stylesheet" type="text/css"/>
+
+        <!-- THEME STYLES -->
+        <link href="{% static 'css/layout.min.css'%}" rel="stylesheet" type="text/css"/>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico"/>
+
+        <link rel="shortcut icon" href="/favicon-img.ico" type="image/x-icon/">
+        <link href="{% static 'css/simple-little-table.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/bloki.css' %}" rel="stylesheet" type="text/css/">
+        <link href="{% static 'css/menu.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/menu_bar.css' %}" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css/">
+        <link href="{% static 'css/sky.css' %}" rel="stylesheet" >
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/all.css' %}" rel="stylesheet">
+  <link href="{% static 'css/blog-home.css' %}" rel="stylesheet">
+
+  <style>
+
+    .like-container{
+        width: 100px;
+        height: auto;
+        padding: 10px 10px 10px 10px;
+        display: flex;
+        align-items:center;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-bottom: 10px;
+
+    }
+
+.like-container button{
+    background: none;
+    border: none;
+}
+
+i{
+  font-size: 22px;
+  cursor: pointer;
+}
+
+</style>
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".header">
+<header class="header navbar-fixed-top">
+            <!-- Navbar -->
+            <nav class="navbar" role="navigation">
+                <div class="collapse navbar-collapse nav-collapse">
+                            <div class="menu-container">
+                                <ul class="nav navbar-nav navbar-nav-right">
+                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="/">Главная</a></li>
+                                    <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#">Новости</a></li>
+
+                                </ul>
                             </div>
-        {% if user.is_authenticated %}
-             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        {% endif %}
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
-{% endblock %}
+                </div>
+                          </nav>
+            <!-- Navbar -->
+        </header>
+
+
+<div class="container content-lg">
+      <div class="container">
+            <div class="post">
+            {% if post.published_date %}
+                <div class="date">
+                    {{ post.published_date }}
+                </div>
+            {% endif %}
+            <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                <!-- Preview Image -->
+                                    {% if post.image %}
+                                    <img class="img-responsive" src="{{ post.image.url }}" alt="Latest Products Image" width="500" >
+                                    {% endif %}
+
+                                </div>
+            {% if user.is_authenticated %}
+                 <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            {% endif %}
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+
+
+      {% block likes %}
+            <div class="like-container">
+              <p class="num-of-likes" id ="num">{{post.likes.count}}</p>
+
+            {% if msg %}
+
+            <i class="fa-solid fa-heart"></i>
+
+            {% else %}
+
+            <i class="fa-regular fa-heart"></i>
+
+            {% endif %}
+
+
+
+
+
+              <small>like</small>
+          </div>
+
+            {% endblock %}
+
+    <script>
+
+
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    const csrftoken = getCookie('csrftoken');
+
+
+
+
+
+      let btn = document.querySelector("i")
+      let num_of_likes = document.getElementById("num")
+      let post_id = "{{post.id}}"
+
+      btn.addEventListener("click", likePost)
+
+      function likePost(e){
+        let url = "{% url 'like' %}"
+        const data = {id:post_id}
+
+        fetch(url, {
+          method: 'POST',
+          headers: {"Content-Type": "application/json",
+          'X-CSRFToken': csrftoken
+        },
+          body : JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+
+          if(data["check"] == 1){
+            btn.classList.remove("fa-regular")
+            btn.classList.add('fa-solid')
+          }
+
+          else if(data["check"] == 0){
+            btn.classList.add("fa-regular")
+            btn.classList.remove('fa-solid')
+          }
+
+          else{
+            alert("you need to login")
+          }
+
+          num_of_likes.innerHTML = data["num_of_likes"]
+
+
+
+        })
+
+
+      }
+
+    </script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    </body>
+
+</html>
+

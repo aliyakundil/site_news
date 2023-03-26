@@ -1,9 +1,11 @@
+import uuid
 from django.db import models
-from django.conf import settings
 from django.urls import reverse
 from django.utils import timezone
 from taggit.managers import TaggableManager
 from django.contrib.auth.models import User
+
+
 
 
 class IpModel(models.Model):
@@ -12,13 +14,12 @@ class IpModel(models.Model):
     def __str__(self):
         return self.ip
 
+
 class Post(models.Model):
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
-        ordering = ['-created_date']
 
-    # author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='Автор')
     title = models.CharField(max_length=222, verbose_name='Заголовок')
     text = models.TextField(blank=True, verbose_name='Текст')
     created_date = models.DateTimeField(default=timezone.now, verbose_name='Дата создания')
@@ -28,16 +29,12 @@ class Post(models.Model):
     id_published = models.BooleanField(default=True, verbose_name='Опубликовано')
     category_id = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name='Категория')
     tags = TaggableManager()
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='name')
+    likes = models.ManyToManyField(User, related_name='post', blank=True)
     views = models.ManyToManyField(IpModel, related_name="post_views", blank=True)
-    likes = models.ManyToManyField(IpModel, related_name="post_likes", blank=True)
-
 
     def total_views(self):
         return self.views.count()
-
-    def total_likes(self):
-        return self.likes.count()
 
 
     def publish(self):
@@ -50,7 +47,6 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('new_detail', kwargs={'pk': self.pk})
-
 
 class Category(models.Model):
     class Meta:

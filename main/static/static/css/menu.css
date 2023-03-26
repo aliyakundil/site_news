@@ -1,0 +1,115 @@
+.dws-menu *{
+    margin: 0 auto;
+    padding: 0;
+    color: black;
+}
+
+
+.dws-menu ul,
+.dws-menu ol{
+    list-style: none;
+}
+
+.dws-menu > ul{
+    display: flex;
+    justify-content: center;
+
+}
+
+.dws-header {
+    /*position: fixed;*/
+   /* background: #3d3c66;*/
+   background: #17bed2; /* Old browsers */
+    /*background: -moz-linear-gradient(top, #c9c9c9 0%, #f6f6f6 2%, #c4c5c7 98%, #757577 100%); /* FF3.6-15 */
+    /*background: -webkit-linear-gradient(top, #c9c9c9 0%, #f6f6f6 2%, #c4c5c7 98%, #757577 100%); /* Chrome10-25,Safari5.1-6 */
+    /*background: linear-gradient(to bottom, #c9c9c9 0%, #f6f6f6 2%, #c4c5c7 98%, #757577 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9c9c9', endColorstr='#757577', GradientType=0); /* IE6-9 */
+
+    width: 100%;
+    margin-bottom: 2px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    left:0;
+    z-index: 1;
+    content: '';
+    display: block;
+
+}
+
+.dws-menu > ul li a {
+    display: block;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c9c9c9+0,f6f6f6+2,c4c5c7+98,757577+100;Custom+3 */
+    background: #17bed2;
+    /*background: #c9c9c9; /* Old browsers */
+    /*background: -moz-linear-gradient(top, #c9c9c9 0%, #f6f6f6 2%, #c4c5c7 98%, #757577 100%, ); /* FF3.6-15 */
+    /*background: -webkit-linear-gradient(top, #c9c9c9 0%, #f6f6f6 2%, #c4c5c7 98%, #757577 100%); /* Chrome10-25,Safari5.1-6 */
+    /*background: linear-gradient(to bottom, #c9c9c9 0%, #f6f6f6 2%, #c4c5c7 98%, #757577 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9c9c9', endColorstr='#757577', GradientType=0); /* IE6-9 */
+    padding: 15px 30px 15px 40px;
+    font-size: 14px;
+    color: #454547;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.dws-menu > ul li{
+    position: relative;
+    /*border-right: 1px solid #c7c8ca;*/
+   }
+
+.dws-menu > ul li > a i.fa{
+    position: absolute;
+    top: 15px;
+    left: 12px;
+    font-size: 18px;
+}
+
+
+
+.dws-menu li a:hover{
+    background: #17bed2;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e0e1e5+0,454547+2,454547+98,e0e1e5+100 */
+    /*background: #e0e1e5; /* Old browsers */
+    /*background: -moz-linear-gradient(top,  #e0e1e5 0%, #454547 2%, #454547 98%, #e0e1e5 100%); /* FF3.6-15 */
+    /*background: -webkit-linear-gradient(top,  #e0e1e5 0%,#454547 2%,#454547 98%,#e0e1e5 100%); /* Chrome10-25,Safari5.1-6 */
+    /*background: linear-gradient(to bottom,  #e0e1e5 0%,#454547 2%,#454547 98%,#e0e1e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e1e5', endColorstr='#e0e1e5',GradientType=0 ); /* IE6-9 */
+    color: #ffffff;
+    box-shadow: 1px 5px 10px -5px white;
+    transition: all 0.3s ease;
+}
+
+ /*  Далее сделаем появление подменю при наведение на основные пункты верхнего меню, для этого добавляем display: none; и тем самым скрываем все внутренние пункты.*/
+
+   /*sub menu*/
+.dws-menu li ul{
+    position: absolute;
+    min-width: 150px;
+    display: none;
+}
+
+.dws-menu li > ul li{
+    /*border: 1px solid #c7c8ca;*/
+    border: 1px solid #17bed2;
+}
+
+.dws-menu li > ul li a{
+    padding: 10px;
+    text-transform: none;
+    background: #0c0c0d;
+}
+
+.dws-menu li > ul li ul{
+    position: absolute;
+    right: -150px;
+    top: 0;
+}
+  /* А для их появления отберем списки при наведении и отобразим их при помощи display: block;.*/
+
+.dws-menu li:hover > ul{
+    display: block;
+}
+
+.dws-menu li:hover > ul{
+    display: block;
+}

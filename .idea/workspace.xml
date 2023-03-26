@@ -5,7 +5,237 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f289e51c-1ad0-444d-a9c9-a06f10d3087f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/main/templates/main/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0002_alter_post_likes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0003_post_slug.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0005_alter_post_likes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/1-simple.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/2-count.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/css/blog-home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/css/like.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/dummy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/jquery/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/jquery/jquery.slim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/jquery/jquery.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/jquery/jquery.slim.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/lidi.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/lidi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/lidi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/blog-home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/bloki.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/css.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/layout-rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/layout-rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/layout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/layout.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/like.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/menu_bar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/sensors.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/sensors2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/simple-little-table.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/sky.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/slider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/images/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/images/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/images/22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/images/slider.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/jquery/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/jquery/jquery.slim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/jquery/jquery.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/jquery/jquery.slim.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/bootstrap/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/jquery-migrate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/jquery.appear.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/jquery.back-to-top.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/jquery.easing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/jquery.parallax.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/jquery.smooth-scroll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/jquery.wow.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/jquery/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/jquery/jquery.slim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/jquery/jquery.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/jquery/jquery.slim.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/simple-line-icons/css/simple-line-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/simple-line-icons/fonts/Simple-Line-Icons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/simple-line-icons/fonts/Simple-Line-Icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/simple-line-icons/fonts/Simple-Line-Icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/simple-line-icons/fonts/Simple-Line-Icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/simple-line-icons/fonts/Simple-Line-Icons.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/swiper/css/swiper.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/swiper/css/swiper.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/swiper/js/swiper.jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/swiper/js/swiper.jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/swiper/js/swiper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/vendor/swiper/js/swiper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/webfonts/fa-v4compatibility.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/static/webfonts/fa-v4compatibility.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/jquery/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/jquery/jquery.slim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/jquery/jquery.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/vendor/jquery/jquery.slim.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/templates/main/1-simple.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/templates/main/2-count.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/templates/main/blog_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/templates/main/blog_index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/templates/main/like.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/23/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/23/Без_названия.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/24/9a1a13b06551e3925abcaa04c244f301.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/24/askarov.nurbek.tuktanov-3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/24/azango.cpj_-3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/24/azango.cpj_-3_mXdGpOX.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/24/chine.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/24/chine_AOHOk1G.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/24/байден.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/24/бунт.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/25/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/25/1_VkbN0Zj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/25/azango.cpj_-3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/25/chine.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/25/owl_detail_240_5d331d1b2da7c17c8e7b1a20631ec281.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/25/байден.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/25/бунт.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/26/owl_detail_240_5d331d1b2da7c17c8e7b1a20631ec281.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/26/owl_detail_240_5d331d1b2da7c17c8e7b1a20631ec281_oxuzTmk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/27/KMO_120232_26641_1_t246_210217.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/27/KMO_120232_26642_1_t246_211851_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/27/azango.cpj_-3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/27/chine.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/27/байден.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/news/2023/03/27/бунт.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/blog-home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jquery/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jquery/jquery.slim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jquery/jquery.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jquery/jquery.slim.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/jquery/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/jquery/jquery.slim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/jquery/jquery.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/jquery/jquery.slim.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-v4compatibility.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-v4compatibility.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0002_ipmodel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0003_delete_ipmodel_remove_post_likes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0004_ipmodel_post_likes_post_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0005_remove_post_likes_remove_post_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0006_remove_post_author_post_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/migrations/0006_auto_20230327_0039.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0007_post_likes_post_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0008_remove_post_user_post_author.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/migrations/0004_alter_post_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/migrations/0009_remove_post_author_post_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/js/likedislike.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/vendor/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/main/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/post_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,16 +265,26 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/site_news/main/static/css&quot;
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/product-blog&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\site_news\main\static\css" />
-      <recent name="D:\Projects\site_news\main\templates" />
+      <recent name="D:\Projects\site_news" />
       <recent name="D:\Projects\site_news\main\templates\main" />
+      <recent name="D:\Projects\site_news\main\templates" />
+      <recent name="D:\Projects\site_news\main\static" />
+      <recent name="D:\Projects\site_news\main\static\vendor\bootstrap\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\site_news\main\static\css" />
       <recent name="D:\Projects\site_news\main\templates\main" />
     </key>
   </component>
@@ -56,7 +296,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679383783525</updated>
+      <workItem from="1679817969695" duration="11049000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/permissions.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
