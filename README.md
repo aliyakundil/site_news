@@ -46,4 +46,8 @@ REST_API;
 
 - Теги
 
-- Лайки
+- Бесконечный скролл на JavaScript
+
+- Лайки на JavaScript
+
+
